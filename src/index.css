@@ -1,13 +1,198 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: inherit;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 62.5%;
+}
+
+@media only screen and (max-width: 27em) {
+  html {
+    font-size: 42.5%;
+  }
+}
+@media only screen and (max-width: 23.45em) {
+  html {
+    font-size: 37.5%;
+  }
+}
+
+@media only screen and (max-width: 20.625em) {
+  html {
+    font-size: 32.5%;
+  }
+}
+
+:root {
+  --color-primary-light: rgb(117, 54, 130);
+  --color-primary: rgb(199, 54, 95);
+  --color-primary-dark: rgb(191, 46, 52);
+
+  --color-white: rgb(255, 255, 255);
+  --light-grey: rgb(238, 238, 238);
+
+  --color-danger: rgb(195, 73, 73);
+}
+
+body {
+  box-sizing: border-box;
+
+  font-family: poppins, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(
+    to right bottom,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.note {
+  width: 60rem;
+  height: 90vh;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 0.5rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.note__heading {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  -webkit-background-clip: text;
+  display: inline-block;
+  background-image: linear-gradient(
+    to right bottom,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  color: transparent;
+  margin: 1rem auto;
+}
+
+.note__function {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+.note__input {
+  width: 100%;
+  height: 4rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  outline: none;
+  margin-right: 1rem;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: var(--color-primary);
+}
+
+.note__input:active {
+  outline: #753682;
+}
+.note__input:hover {
+  border: none;
+  outline: black;
+}
+
+.note__input::placeholder {
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.note__btn {
+  background-image: linear-gradient(
+    to right bottom,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  border-radius: 0.3rem;
+  font-size: 1.6rem;
+  color: white;
+  font-weight: 400;
+}
+
+.note__list {
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.5);
+  flex: 1 0 0;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.note__list::-webkit-scrollbar {
+  width: 0.1rem;
+}
+
+.note__item {
+  width: 100%;
+  height: 4.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--light-grey);
+  border-radius: 0.5rem;
+  display: flex;
+  /* overflow: hidden; */
+}
+
+.note__text {
+  display: flex;
+  width: 84%;
+  overflow-x: scroll;
+  height: 5rem;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+  font-size: 1.6rem;
+}
+
+.note__text::-webkit-scrollbar {
+  width: 0rem;
+}
+
+.note__delete:visited,
+.note__delete:link {
+  background-color: var(--color-danger);
+  text-decoration: none;
+  border-radius: 0.3rem;
+  font-size: 1.6rem;
+  color: white;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+}
+
+.copyright {
+  font-size: 1.6rem;
+  color: var(--light-grey);
 }
